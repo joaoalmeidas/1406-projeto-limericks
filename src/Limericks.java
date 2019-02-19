@@ -13,24 +13,37 @@ public class Limericks {
 		final String[] preposicao = {"to", "from", "over", "under", "on"};
 		
 		String[] limericks = new String[5];
-		String[] rima1 = new String[6];
-		String[] rima2 = new String[4];
+		String[] rima = new String[5];
 		
 		SecureRandom aleatorio = new SecureRandom();
 		
-		rima1[0] = substantivo[aleatorio.nextInt(substantivo.length)];
+		rima[0] = substantivo[aleatorio.nextInt(substantivo.length)];
 		
-		for(int i = 1; i < rima1.length; i++) {
+		do {
+			
+			rima[2] = substantivo[aleatorio.nextInt(substantivo.length)];
+			
+		}while(rima[0].substring(rima[0].length()-2, rima[0].length()).equals(rima[2].substring(rima[2].length()-2, rima[2].length())));
+		
+		for(int i = 1; i < rima.length; i+=3) {
 			
 			do {
 				
-				rima1[i] = substantivo[aleatorio.nextInt(substantivo.length)];
+				rima[i] = substantivo[aleatorio.nextInt(substantivo.length)];
 				
-			}while(!rima1[i-1].substring(rima1[i-1].length()-2, rima1[i-1].length()).equals(rima1[i].substring(rima1[i].length()-2, rima1[i].length())) || rima1[i].equals(rima1[i-1]));
+			}while(!rima[0].substring(rima[0].length()-2, rima[0].length()).equals(rima[i].substring(rima[i].length()-2, rima[i].length())) || rima[i].equals(rima[i-1]));
 			
 		}
 		
-		for(String a: rima1) {
+		do {
+			
+			rima[3] = substantivo[aleatorio.nextInt(substantivo.length)];
+			
+		}while(!rima[2].substring(rima[2].length()-2, rima[2].length()).equals(rima[3].substring(rima[3].length()-2, rima[3].length())));
+		
+		
+		
+		for(String a: rima) {
 			System.out.println(a);
 		}
 		
