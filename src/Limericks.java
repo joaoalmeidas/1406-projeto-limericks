@@ -27,11 +27,25 @@ public class Limericks {
 		
 		for(int i = 1; i < rima.length; i+=3) {
 			
-			do {
+			if(i == 5) {
 				
-				rima[i] = substantivo[aleatorio.nextInt(substantivo.length)];
+				do {
+					
+					rima[i] = substantivo[aleatorio.nextInt(substantivo.length)];
+					
+				}while(!rima[0].substring(rima[0].length()-2, rima[0].length()).equals(rima[i].substring(rima[i].length()-2, rima[i].length())) || rima[i].equals(rima[1]) || rima[i].equals(rima[0]));
 				
-			}while(!rima[0].substring(rima[0].length()-2, rima[0].length()).equals(rima[i].substring(rima[i].length()-2, rima[i].length())) || rima[i].equals(rima[i-1]));
+			}else {
+				
+				do {
+					
+					rima[i] = substantivo[aleatorio.nextInt(substantivo.length)];
+					
+				}while(!rima[0].substring(rima[0].length()-2, rima[0].length()).equals(rima[i].substring(rima[i].length()-2, rima[i].length())) || rima[i].equals(rima[i-1]));
+				
+			}
+			
+			
 			
 		}
 		
@@ -71,7 +85,11 @@ public class Limericks {
 		}
 		
 		
+		for(String verso : limericks) {
 			
+			System.out.println(verso);
+			
+		}
 
 
 	}
