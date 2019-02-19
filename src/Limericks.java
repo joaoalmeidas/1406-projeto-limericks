@@ -13,9 +13,19 @@ public class Limericks {
 		final String[] preposicao = {"to", "from", "over", "under", "on"};
 		
 		String[] limericks = new String[5];
+		String rima1 = "";
+		String rima2 = "";
+		
 		
 		SecureRandom aleatorio = new SecureRandom();
 		
+		rima1 = substantivo[aleatorio.nextInt(substantivo.length)];
+		
+		do{
+			
+			rima2 = substantivo[aleatorio.nextInt(substantivo.length)];
+			
+		}while(rima1.equals(rima2));
 		
 		
 			
@@ -27,7 +37,7 @@ public class Limericks {
 		frase += verbo[aleatorio.nextInt(verbo.length)] + " ";
 		frase += preposicao[aleatorio.nextInt(preposicao.length)] + " ";
 		frase += artigo[aleatorio.nextInt(artigo.length)] + " ";
-		frase += substantivo[aleatorio.nextInt(substantivo.length)] + ",";
+		frase += rima1 + ",";
 		
 		limericks[0] = frase;
 			
@@ -41,7 +51,7 @@ public class Limericks {
 		frase += verbo[aleatorio.nextInt(verbo.length)] + " ";
 		frase += preposicao[aleatorio.nextInt(preposicao.length)] + " ";
 		frase += artigo[aleatorio.nextInt(artigo.length)] + " ";
-		frase += substantivo[aleatorio.nextInt(substantivo.length)] + ",";
+		frase += rima2 + ",";
 		
 		limericks[2] = frase;
 		
