@@ -43,8 +43,31 @@ public class Limericks {
 		
 		
 		
-		for(String a: rima) {
-			System.out.println(a);
+		for(int i = 0; i < limericks.length; i++) {
+			
+			String frase = "";
+			
+			frase += artigo[aleatorio.nextInt(artigo.length)] + " ";
+			frase = frase.substring(0, 1).toUpperCase() + frase.substring(1);
+			
+			frase += substantivo[aleatorio.nextInt(artigo.length)] + " ";
+			frase += verbo[aleatorio.nextInt(verbo.length)] + " ";
+			frase += preposicao[aleatorio.nextInt(preposicao.length)] + " ";
+			frase += artigo[aleatorio.nextInt(artigo.length)] + " ";
+			frase += rima[i];
+			
+			if(i == limericks.length - 1) {
+				
+				frase += ".";
+				
+			}else {
+				
+				frase += ",";
+				
+			}
+
+			
+			limericks[i] = frase;
 		}
 		
 		
